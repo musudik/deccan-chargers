@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deccan Chargers - Official Website</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/DeccanChargers.gif" alt="Deccan Chargers Logo" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#players">Chargers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#matches">Matches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-3 text-gold fw-bold mb-4">Tribute to Deccan Chargers</h1>
+                    <div class="hero-content text-light">
+                        <p class="mb-4">Deccan Chargers was more than just a cricket team—it was a symbol of passion, resilience, and unforgettable moments on the field. From their underdog triumph in 2009 to the fearless spirit they brought to every match, the Chargers gave their fans memories that will last a lifetime.</p>
+                        <p class="mb-4">Though the team no longer plays, their legacy lives on in the hearts of those who cheered for them. <strong>DeccanChargers.de</strong> is our tribute to this legendary team—a place where fans can relive the excitement, celebrate the history, and keep the Chargers' spirit alive.</p>
+                        <p class="text-gold fw-bold mb-4">Go Chargers! ⚡💙</p>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#news" class="btn btn-gold me-3">Latest News</a>
+                        <a href="#matches" class="btn btn-outline-gold">Match Schedule</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Players Section -->
+    <section id="players" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-gold text-center mb-5">Our Chargers</h2>
+            <div class="row g-4" id="playersGrid">
+                <!-- Player cards will be added dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Matches Section -->
+    <section id="matches" class="section-padding bg-darker">
+        <div class="container">
+            <h2 class="section-title text-gold text-center mb-5">Matches</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="text-light mb-4">Upcoming Matches</h3>
+                    <div id="upcomingMatches">
+                        <!-- Upcoming matches will be added dynamically -->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-light mb-4">Recent Results</h3>
+                    <div id="recentResults">
+                        <!-- Recent results will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-gold text-center mb-5">Latest News</h2>
+            <div class="row g-4" id="newsGrid">
+                <!-- News articles will be added dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Management Section -->
+    <section class="team-management-section section-padding">
+        <div class="container">
+            <h2 class="section-title text-gold text-center mb-5">Team Management</h2>
+            <div class="management-grid">
+                <div class="management-card">
+                    <img src="images/players/placeholder.png" alt="Founder" class="management-image">
+                    <div class="management-info">
+                        <h3 class="management-name text-gold">John Doe</h3>
+                        <p class="management-role">Founder</p>
+                    </div>
+                </div>
+                <div class="management-card">
+                    <img src="images/players/placeholder.png" alt="Chairman" class="management-image">
+                    <div class="management-info">
+                        <h3 class="management-name text-gold">Jane Smith</h3>
+                        <p class="management-role">Chairman</p>
+                    </div>
+                </div>
+                <div class="management-card">
+                    <img src="images/players/placeholder.png" alt="Captain" class="management-image">
+                    <div class="management-info">
+                        <h3 class="management-name text-gold">Mike Johnson</h3>
+                        <p class="management-role">Captain</p>
+                    </div>
+                </div>
+                <div class="management-card">
+                    <img src="images/players/placeholder.png" alt="Vice Captain" class="management-image">
+                    <div class="management-info">
+                        <h3 class="management-name text-gold">David Wilson</h3>
+                        <p class="management-role">Vice Captain</p>
+                    </div>
+                </div>
+                <div class="management-card">
+                    <img src="images/players/placeholder.png" alt="Media Head" class="management-image">
+                    <div class="management-info">
+                        <h3 class="management-name text-gold">Sarah Brown</h3>
+                        <p class="management-role">Media Head</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors-section">
+        <div class="container">
+            <h2 class="section-title text-gold text-center mb-5">Our Promotors & Sponsors</h2>
+            <div class="sponsors-grid">
+                <a href="https://onemunich365.de/" target="_blank" class="sponsor-item">
+                    <img src="images/OneMunich365.png" alt="OneMunich365 Logo">
+                </a>
+                <a href="https://www.gadgetlend.de/" target="_blank" class="sponsor-item">
+                    <img src="images/Logo_Gadgetlend.png" alt="Gadgetlend Logo">
+                </a>
+                <a href="https://namasterestaurantmunich.de/" target="_blank" class="sponsor-item">
+                    <img src="images/namaste_logo.png" alt="Namaste Restaurant Logo">
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-gold text-center mb-5">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <form id="contactForm" class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-darker text-light">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/DeccanChargers.gif" alt="Deccan Chargers Logo" height="80" class="mb-3">
+                    <p>Thunder and Lightning on the Cricket Field</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-gold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#players">Chargers</a></li>
+                        <li><a href="#matches">Matches</a></li>
+                        <li><a href="#news">News</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-gold">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2025 Deccan Chargers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Player Details -->
+    <div class="modal fade" id="playerModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-gold">
+                    <h5 class="modal-title text-gold">Player Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="playerModalContent">
+                    <!-- Player details will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+:root {
+    --gold: #e2b74a;
+    --dark-gold: #c8a64f;
+    --black: #000000;
+    --darker: #111111;
+    --dark: #1A1A1A;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: var(--dark);
+}
+
+.text-gold {
+    color: var(--gold) !important;
+}
+
+.bg-darker {
+    background-color: var(--darker);
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+}
+
+/* Navigation */
+.custom-nav {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    position: relative;
+    height: 60px;
+    overflow: visible;
+}
+
+.navbar-brand img {
+    height: 40px;
+    transform: scale(4);
+    transform-origin: left center;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: 30px;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)),
+        url('images/DC-3.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(184, 134, 11, 0.1) 0%, transparent 70%);
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.hero-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content strong {
+    color: var(--gold);
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+}
+
+/* Buttons */
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--black);
+    border: 2px solid var(--gold);
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: transparent;
+    color: var(--gold);
+}
+
+.btn-outline-gold {
+    background-color: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+/* Players Section */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.player-card {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: var(--darker);
+    cursor: pointer;
+}
+
+.player-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/DC-BG.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.player-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14rem;
+    font-weight: bold;
+    color: var(--gold);
+    opacity: 0.3;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.player-image {
+    position: absolute;
+    bottom: -30px;
+    left: 40px;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    z-index: 3;
+}
+
+.player-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 3;
+}
+
+.player-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 10px;
+    left: 10px;
+    color: var(--gold);
+    font-size: 0.9rem;
+    z-index: 3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.player-card:hover .player-image {
+    transform: translateX(-30%);
+}
+
+.player-card:hover .player-number {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.player-name {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.player-role {
+    color: var(--gold);
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Matches Section */
+.match-card {
+    background: var(--dark);
+    border: 1px solid var(--dark-gold);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateX(10px);
+    box-shadow: -5px 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* News Section */
+.news-card {
+    background: var(--darker);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+.news-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.1);
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+/* Contact Form */
+.contact-form .form-control {
+    background: var(--darker);
+    border: 1px solid var(--dark-gold);
+    color: #fff;
+    padding: 0.8rem;
+}
+
+.contact-form .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+    border-color: var(--gold);
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid var(--dark-gold);
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--gold);
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.footer-bottom {
+    background: var(--black);
+    border-top: 1px solid var(--dark-gold);
+}
+
+/* Modal Styles */
+.modal-content {
+    border: 1px solid var(--dark-gold);
+}
+
+#playerModalContent {
+    position: relative;
+}
+
+#playerModalContent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/DeccanChargersAnimation.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#playerModalContent > * {
+    position: relative;
+    z-index: 1;
+}
+
+.border-gold {
+    border-color: var(--dark-gold) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Parallax Effect */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Team Management Section */
+.management-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.management-card {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: var(--darker);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.management-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/DeccanChargersAnimation.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.management-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.management-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    z-index: 3;
+}
+
+.management-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.management-role {
+    color: var(--gold);
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.management-card:hover {
+    transform: translateY(-5px);
+}
+
+.management-card:hover .management-image {
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Sponsors Section */
+.sponsors-section {
+    background: var(--darker);
+    padding: 60px 0;
+}
+
+.sponsors-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.sponsor-item {
+    transition: all 0.3s ease;
+    max-width: 200px;
+}
+
+.sponsor-item img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.sponsor-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
