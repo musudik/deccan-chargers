@@ -351,20 +351,28 @@ document.addEventListener('DOMContentLoaded', () => {
 // GSAP Animations
 function initializeAnimations() {
     // Hero Section Animation
-    gsap.from('.hero-section h1', {
-        duration: 1.5,
+    const heroTl = gsap.timeline();
+    
+    heroTl.from('.hero-section h1', {
+        duration: 2,
         y: 100,
         opacity: 0,
         ease: 'power4.out'
-    });
-
-    gsap.from('.hero-section p', {
+    })
+    .from('.hero-section p', {
         duration: 1.5,
-        y: 50,
+        y: 30,
         opacity: 0,
-        ease: 'power4.out',
-        delay: 0.5
-    });
+        ease: 'power3.out',
+        stagger: 0.2
+    }, '-=1.5')
+    .from('.hero-buttons .btn', {
+        duration: 1,
+        y: 20,
+        opacity: 0,
+        ease: 'power2.out',
+        stagger: 0.2
+    }, '-=1');
 
     // Scroll Animations
     gsap.utils.toArray('.section-title').forEach(title => {
