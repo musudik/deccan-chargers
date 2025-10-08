@@ -1,3 +1,66 @@
+// DCPL 2025 Slider Functionality
+class DCPLSlider {
+    constructor() {
+        this.currentSlide = 0;
+        this.slides = document.querySelectorAll('.slide');
+        this.navDots = document.querySelectorAll('.nav-dot');
+        this.totalSlides = this.slides.length;
+        this.autoSlideInterval = null;
+        
+        this.init();
+    }
+    
+    init() {
+        // Add click event listeners to navigation dots
+        this.navDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                this.goToSlide(index);
+            });
+        });
+        
+        // Start auto-slide
+        this.startAutoSlide();
+        
+        // Pause auto-slide on hover
+        const slider = document.querySelector('.dcpl-slider');
+        if (slider) {
+            slider.addEventListener('mouseenter', () => this.stopAutoSlide());
+            slider.addEventListener('mouseleave', () => this.startAutoSlide());
+        }
+    }
+    
+    goToSlide(slideIndex) {
+        // Remove active class from current slide and nav dot
+        this.slides[this.currentSlide].classList.remove('active');
+        this.navDots[this.currentSlide].classList.remove('active');
+        
+        // Update current slide index
+        this.currentSlide = slideIndex;
+        
+        // Add active class to new slide and nav dot
+        this.slides[this.currentSlide].classList.add('active');
+        this.navDots[this.currentSlide].classList.add('active');
+    }
+    
+    nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+        this.goToSlide(nextIndex);
+    }
+    
+    startAutoSlide() {
+        this.autoSlideInterval = setInterval(() => {
+            this.nextSlide();
+        }, 4000); // Change slide every 4 seconds
+    }
+    
+    stopAutoSlide() {
+        if (this.autoSlideInterval) {
+            clearInterval(this.autoSlideInterval);
+            this.autoSlideInterval = null;
+        }
+    }
+}
+
 // Initialize GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
@@ -346,6 +409,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMatches();
     loadNews();
     initializeEventListeners();
+    
+    // Initialize DCPL Slider
+    new DCPLSlider();
 });
 
 // GSAP Animations
