@@ -713,6 +713,42 @@ body {
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
 }
 
+/* DCPL Promotional Cards */
+.dcpl-promo-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    height: 100%;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dcpl-promo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.dcpl-promo-card img {
+    transition: transform 0.3s ease;
+}
+
+.dcpl-promo-card:hover img {
+    transform: scale(1.02);
+}
+
+.contest-features, .service-features {
+    list-style: none;
+    padding: 0;
+}
+
+.contest-features li, .service-features li {
+    padding: 5px 0;
+    border-left: 2px solid var(--gold);
+    padding-left: 10px;
+    margin-bottom: 8px;
+}
+
 @media (max-width: 768px) {
     .dcpl-info .event-detail {
         margin-bottom: 15px;
@@ -722,5 +758,10 @@ body {
         display: block;
         width: 100%;
         margin-bottom: 10px;
+    }
+    
+    .dcpl-promo-card {
+        padding: 20px;
+        margin-bottom: 20px;
     }
 }

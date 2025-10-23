@@ -91,7 +91,42 @@
                         
                         <div class="dcpl-buttons">
                             <a href="#contact" class="btn btn-gold me-3">Register Now</a>
-                            <a href="#about" class="btn btn-outline-gold">Learn More</a>
+                            <a href="#promo-content" class="btn btn-outline-gold">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional DCPL Promotions -->
+            <div id="promo-content" class="row mt-5">
+                <!-- Contest Promotion -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="dcpl-promo-card">
+                        <img src="images/DC-SM-CONTEST.jpg" alt="DCPL 2025 Contest" class="img-fluid rounded shadow-lg mb-3">
+                        <div class="promo-content text-light">
+                            <h4 class="text-gold mb-3">🏆 DCPL 2025 Contest</h4>
+                            <p class="mb-3">Join our exciting contest and win amazing prizes! Show your talent and support for the Deccan Chargers in this special DCPL 2025.</p>
+                            <ul class="contest-features mb-3">
+                                <li>🎁 Exciting Trophy for winners</li>
+                                <li>🏏 Discounts from www.gadgetlend.de</li>
+                            </ul>
+                            <a href="https://www.instagram.com/deccanchargers.de" target="_blank" class="btn btn-outline-gold">Join Contest</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Financial Agent Promotion -->
+                <div class="col-lg-6">
+                    <div class="dcpl-promo-card">
+                        <img src="images/DC-FC.jpg" alt="Financial Services" class="img-fluid rounded shadow-lg mb-3">
+                        <div class="promo-content text-light">
+                            <h4 class="text-gold mb-3">💼 Financial Services</h4>
+                            <p class="mb-3">Looking for reliable financial guidance? Our trusted financial partners provide comprehensive services to help you achieve your financial goals.</p>
+                            <ul class="service-features mb-3">
+                                <li>💰 Investment planning and advice</li>
+                                <li>🛡️ Insurance solutions</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-gold" onclick="openQRModal()">Show QR Code</a>
                         </div>
                     </div>
                 </div>
@@ -244,7 +279,7 @@
                     <div class="social-links">
                         <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/deccanchargers.de" class="me-3"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -253,6 +288,7 @@
         <div class="footer-bottom py-3">
             <div class="container text-center">
                 <p class="mb-0">&copy; 2025 Deccan Chargers. All rights reserved.</p>
+                <p class="mb-0 mt-2 text-muted small">Powered by <a href="https://www.fkgpt.dev" target="_blank" class="text-gold text-decoration-none">www.fkgpt.dev</a></p>
             </div>
         </div>
     </footer>
@@ -267,6 +303,22 @@
                 </div>
                 <div class="modal-body" id="playerModalContent">
                     <!-- Player details will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Code Modal -->
+    <div class="modal fade" id="qrModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-gold">
+                    <h5 class="modal-title text-gold">Financial Services Contact</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="images/GeorgSterzl.jpg" alt="Georg Sterzl QR Code" class="img-fluid rounded shadow-lg mb-3" style="max-width: 300px;">
+                    <p class="text-light mb-0">Scan the QR code to get in touch with our financial services partner</p>
                 </div>
             </div>
         </div>

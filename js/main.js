@@ -593,6 +593,12 @@ function showToast(message) {
     setTimeout(() => toast.remove(), 3000);
 }
 
+// Function to open QR Code Modal
+function openQRModal() {
+    const qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
+    qrModal.show();
+}
+
 // Smooth Scrolling
 function initializeEventListeners() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
